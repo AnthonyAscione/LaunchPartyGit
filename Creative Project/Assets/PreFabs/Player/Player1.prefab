@@ -629,8 +629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dist: 3
-  crosshair: {fileID: 3995848915883702410, guid: 2a22aebf1a1624bdeb5e82aac79f5673,
-    type: 3}
+  crosshair: {fileID: 30, guid: 2a22aebf1a1624bdeb5e82aac79f5673, type: 3}
 --- !u!114 &5240512631911843053
 MonoBehaviour:
   m_ObjectHideFlags: 0
