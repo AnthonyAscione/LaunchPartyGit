@@ -17,12 +17,16 @@ public class Crosshair : MonoBehaviour
     string aimX;
     string aimY;
     Vector2 spot;
-
+    public float theta;
+    Rigidbody2D play;
+    Vector2 upV;
+    bool flipped = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        play= GetComponent<Rigidbody2D>();
         origin = gameObject.transform;
         player = GetComponent<Rigidbody2D>().name;
 
@@ -60,8 +64,21 @@ public class Crosshair : MonoBehaviour
         coord.y = direction.y + origin.position.y;
 
         crosshair.transform.SetPositionAndRotation(coord, Quaternion.identity);
+        theta = Vector2.SignedAngle(play.transform.right,direction);
 
+        if (theta <= 0 && !flipped)
+        {
+            flip();
+        }
+        if (theta >= 0 && flipped)
+        {
+            flip();
+        }
     }
 
-  
+    void flip()
+    {
+        play.transform.Rotate(180f, 0f, 0f);
+
+    }
 }

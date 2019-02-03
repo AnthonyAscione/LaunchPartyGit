@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Planet
   - Pivot
+  - Shots
   layers:
   - Default
   - TransparentFX
@@ -45,6 +46,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Gun
+    uniqueID: 2642299447
     locked: 0
   - name: ForeGround
     uniqueID: 2231101651
