@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class Bolt_Sniper : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+
     public Transform firingPosition;
     int Bullets;
     float time;
     float bspeed;
     float recoilTime;
     float lastFired;
-
+    public LineRenderer line;
 
 
 
@@ -23,7 +23,7 @@ public class Bolt_Sniper : MonoBehaviour
     private AudioSource gunShot;
 
 
-    public Transform point;
+
 
     string shootButton;
     string aimX;
@@ -39,6 +39,7 @@ public class Bolt_Sniper : MonoBehaviour
     {
         gunShot = GetComponent<AudioSource>();
         player = GetComponentInParent<Rigidbody2D>();
+        line = GetComponentInChildren<LineRenderer>();
 
 
         lastFired = 0;
@@ -58,13 +59,11 @@ public class Bolt_Sniper : MonoBehaviour
 
 
 
-        Bullets = 1;
-        time = 0.05f;
-        bspeed = 15;
-        recoilTime = 1f;
+
+        recoilTime = 1.5f;
 
         spread = 0f;
-        gauge = 1;
+
 
 
 
@@ -121,11 +120,27 @@ public class Bolt_Sniper : MonoBehaviour
 
     void FireGun(Vector3 v1)
     {
-        shoot = new Vector3(firingPosition.position.x + md.x, firingPosition.position.y + md.y, 0);
-        var bullet = Instantiate(bulletPrefab, point.position, Quaternion.identity); //might only last length of function
-        bullet.GetComponent<Rigidbody2D>().velocity = v1 * bspeed;
+
+        RaycastHit2D hitInfo = Physics2D.Raycast(firingPosition.position, v1);
+
+
+        if (hitInfo)
+        {
+            Debug.Log(hitInfo.transform.name);
+            line.SetPosition(0, firingPosition.position);
+            line.SetPosition(1, hitInfo.point);
+            Health health = hitInfo.transform.GetComponent<Health>();
+            if (health != null)
+            { health.takeDamage(100); }
+        }
+        else
+        {
+            line.SetPosition(0, firingPosition.position);
+            line.SetPosition(1, md * 100);
+        }
+        line.enabled = true;
         PlaySound(); //might have to fix later
-        Destroy(bullet, 2.0f);
+
     }
 
 
@@ -148,17 +163,16 @@ public class Bolt_Sniper : MonoBehaviour
 
 
 
-        for (int i = 0; i < Bullets; i++)
-        {
-            for (int j = 0; j < gauge; j++)
-            {
-                float xRand = Random.Range(-.1f, .1f) * spread;
-                float yRand = Random.Range(-.1f, .1f) * spread;
-                Vector3 dir = UnitV(new Vector3(md.x + xRand, md.y + yRand, 0));
-                FireGun(dir);
-            }
-            yield return new WaitForSeconds(time);
-        }
+
+        float xRand = Random.Range(-.1f, .1f) * spread;
+        float yRand = Random.Range(-.1f, .1f) * spread;
+        Vector3 dir = UnitV(new Vector3(md.x + xRand, md.y + yRand, 0));
+
+        FireGun(dir);
+        yield return new WaitForSeconds(.02f);
+        line.enabled = false;
+
+
 
     }
 

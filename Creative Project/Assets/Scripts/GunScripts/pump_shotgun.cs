@@ -60,7 +60,7 @@ public class pump_shotgun : MonoBehaviour
        
             Bullets = 1;
             time = 0.05f;
-            bspeed = 10;
+            bspeed = 20;
             recoilTime = 1.2f;
 
             spread = 1f;

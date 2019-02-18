@@ -60,7 +60,7 @@ public class Burst_Ar : MonoBehaviour
 
         Bullets = 3;
         time = 0.05f;
-        bspeed = 10;
+        bspeed = 20;
         recoilTime = .6f;
 
         spread = .15f;

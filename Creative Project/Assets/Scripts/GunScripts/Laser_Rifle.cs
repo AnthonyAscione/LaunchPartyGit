@@ -136,7 +136,7 @@ public class Laser_Rifle : MonoBehaviour
         else
         {
             line.SetPosition(0, firingPosition.position);
-            line.SetPosition(1, md * 100);
+            line.SetPosition(1, v1 * 100);
         }
         line.enabled = true;
         PlaySound(); //might have to fix later

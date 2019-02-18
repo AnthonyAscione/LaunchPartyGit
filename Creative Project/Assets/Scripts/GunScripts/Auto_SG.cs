@@ -60,7 +60,7 @@ public class Auto_SG : MonoBehaviour
 
         Bullets = 1;
         time = 0.05f;
-        bspeed = 10;
+        bspeed = 20;
         recoilTime = .3f;
 
         spread = 1.2f;

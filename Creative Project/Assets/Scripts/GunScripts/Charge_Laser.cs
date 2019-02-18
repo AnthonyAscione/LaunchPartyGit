@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Charge_Laser : MonoBehaviour
 {
-
+    
     public Transform firingPosition;
     int Bullets;
     float time;
@@ -14,7 +14,7 @@ public class Charge_Laser : MonoBehaviour
     float lastFired;
     public LineRenderer line;
     bool firing = false;
-    
+    ParticleSystem effect;
 
     float spread;
     float gauge;
@@ -40,8 +40,10 @@ public class Charge_Laser : MonoBehaviour
         gunShot = GetComponent<AudioSource>();
         player = GetComponentInParent<Rigidbody2D>();
         line = GetComponentInChildren<LineRenderer>();
-        line.startWidth = .005f;
-        line.endWidth = .005f;
+        effect = GetComponentInChildren<ParticleSystem>();
+
+        line.startWidth = .01f;
+        line.endWidth = .01f;
 
 
         lastFired = 0;
@@ -58,7 +60,7 @@ public class Charge_Laser : MonoBehaviour
 
 
 
-
+        
 
 
 
@@ -83,11 +85,12 @@ public class Charge_Laser : MonoBehaviour
         // range for get axis RT on mac is -1 to 1 (usually starts at 0?)
         if ((Input.GetKeyDown(KeyCode.S) || (Input.GetAxis(shootButton) >= 0.5f))&&!firing)
         {
-
-
+            if (!effect.isPlaying)
+            { effect.Play(); }
+           
             Ex(); //fires certain number of bullets
 
-
+           
 
         }
         else
@@ -95,7 +98,7 @@ public class Charge_Laser : MonoBehaviour
             line.enabled = false;
             chargeLevel = 0;
             firing = false;
-         
+            effect.Stop();
         }
         md.x = Input.GetAxis(aimX);
         md.y = Input.GetAxis(aimY);
@@ -155,19 +158,20 @@ public class Charge_Laser : MonoBehaviour
 
     IEnumerator FireLaser(Vector3 v1)
     {
-       
+        effect.Stop();
         RaycastHit2D hitInfo = Physics2D.Raycast(firingPosition.position, v1);
-        line.startWidth = .5f;
-        line.endWidth = .5f;
+        line.startWidth = 2f;
+        line.endWidth = 2f;
 
         if (hitInfo)
         {
             
             line.SetPosition(0, firingPosition.position);
             line.SetPosition(1, hitInfo.point);
+            
             Health health = hitInfo.transform.GetComponent<Health>();
             if (health != null)
-            { health.takeDamage(200); }
+            { health.takeDamage(20); }
         
 
     }
@@ -177,10 +181,10 @@ public class Charge_Laser : MonoBehaviour
             line.SetPosition(1, md * 100);
         }
         line.enabled = true;
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(2f);
         line.enabled = false;
-        line.startWidth = .005f;
-        line.endWidth = .005f;
+        line.startWidth = .1f;
+        line.endWidth = .1f;
         firing = true;
         chargeLevel = 0;
 
@@ -213,20 +217,21 @@ public class Charge_Laser : MonoBehaviour
         float yRand = Random.Range(-.1f, .1f) * spread;
         Vector3 dir = UnitV(new Vector3(md.x + xRand, md.y + yRand, 0));
 
-        FireTracer(dir);
-        StartCoroutine(charge());
 
 
-        if (chargeLevel >= 100)
+        charge();
+
+
+        if (chargeLevel >= 180)
         { StartCoroutine(FireLaser(dir)); ; }
 
 
     }
-    IEnumerator charge()
+    void charge()
     {
        
-        chargeLevel ++;
-        yield return new WaitForSeconds(0.1f);
+        chargeLevel = chargeLevel + 1;
+        
     }
 
 

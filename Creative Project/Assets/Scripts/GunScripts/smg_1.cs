@@ -60,7 +60,7 @@ public class smg_1 : MonoBehaviour
 
         Bullets = 1;
         time = 0.05f;
-        bspeed = 10;
+        bspeed = 20;
         recoilTime = 0.1f;
 
         spread = 1.2f;

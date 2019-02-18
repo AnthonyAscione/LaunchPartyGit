@@ -60,7 +60,7 @@ public class AK47 : MonoBehaviour
 
         Bullets = 1;
         time = 0.05f;
-        bspeed = 10;
+        bspeed = 20;
         recoilTime = 0.3f;
         spread = .15f;
         gauge = 1;
