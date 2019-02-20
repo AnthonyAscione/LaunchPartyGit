@@ -18,8 +18,7 @@ public class Collison : MonoBehaviour
     {
 
 
-        if (col.gameObject.name == "Black Hole")
-        {
+      
             if (objectname == "Player1" || objectname == "Player2")
             {
                 //destroy object and its crosshair
@@ -27,6 +26,6 @@ public class Collison : MonoBehaviour
                 Destroy(GameObject.Find(objectname));
                 Destroy(ch);
             }
-        }
+        
     }
 }

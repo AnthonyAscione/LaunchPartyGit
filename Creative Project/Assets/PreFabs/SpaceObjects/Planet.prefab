@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4711654828867296966}
   - component: {fileID: 4711654828867296961}
-  - component: {fileID: 6257701672577629154}
   - component: {fileID: 4711654828867296960}
   - component: {fileID: 8947472187411527566}
+  - component: {fileID: 7317554187178221793}
   m_Layer: 8
   m_Name: Planet
   m_TagString: Planet
@@ -82,19 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6257701672577629154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4711654828867296962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a722fefdd5e86408681fd088439bd17b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
 --- !u!58 &4711654828867296960
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -132,3 +119,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7317554187178221793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711654828867296962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5229ef5690bf6d439ac86439a19145d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planets:
+  - {fileID: 21300000, guid: 3c8f694f2e297f2409c396131a734661, type: 3}
+  - {fileID: 21300000, guid: 50534be9181a9d043805f7325ccad6fb, type: 3}
+  - {fileID: 21300000, guid: af539de290f44f94e8c9c51d9d42fa82, type: 3}
+  - {fileID: 21300000, guid: d9d3549b10c81dc49871bb55f5796bdf, type: 3}
+  - {fileID: 21300000, guid: 8a39a2e60390731428738125b5a68bb5, type: 3}
+  - {fileID: 21300000, guid: b0b4314c39e7763429dfe4e99c484058, type: 3}
+  - {fileID: 21300000, guid: 5e2fdb3630247bd44badfe93f20dac76, type: 3}
+  - {fileID: 21300000, guid: 5a8a412b4287a0648833aa9fc123854b, type: 3}
+  - {fileID: 21300000, guid: 8bb6d7da99b6dbd499e1baf4be085d00, type: 3}
+  - {fileID: 21300000, guid: aedb3f56f467ca648b3eee1233bec41d, type: 3}
+  - {fileID: 21300000, guid: cfc0659c76a75d442ac9039f5353c6ed, type: 3}
