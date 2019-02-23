@@ -7,6 +7,9 @@ TagManager:
   - Planet
   - Pivot
   - Shots
+  - Stats
+  - P2C
+  - P1C
   layers:
   - Default
   - TransparentFX

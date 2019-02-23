@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 3905387862264618520}
   - component: {fileID: 3905387862264618518}
   - component: {fileID: 8021134189282730221}
+  - component: {fileID: 7412948177474226201}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -394,6 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dist: 3
   crosshair: {fileID: 30, guid: 2a22aebf1a1624bdeb5e82aac79f5673, type: 3}
+  theta: 0
 --- !u!114 &5196822534173628903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,3 +597,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &7412948177474226201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196822534173628831}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b84856cf9f04ad39ad73802e225943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
