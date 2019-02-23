@@ -11,8 +11,13 @@ public class GameManager : MonoBehaviour {
     string winner;
     public float bound;
     public Text winnerText;
+    bool gameEnded = false;
+    GameObject StatManag;
+    Stats stat;
 
     void Start () {
+        StatManag = GameObject.FindGameObjectWithTag("Stats");
+        stat = StatManag.GetComponent<Stats>();
     }
 	
 	// Update is called once per frame
@@ -20,15 +25,23 @@ public class GameManager : MonoBehaviour {
         CheckRestart();
         CheckEscape();
         CheckPosition();
+        if(Input.GetKeyDown(KeyCode.H)){
+            players = GameObject.FindGameObjectsWithTag("Player");
+            Destroy(players[0]);
+            //gameEnded = true;
+        }
 	}
 
 
 
     void CheckRestart(){
         players = GameObject.FindGameObjectsWithTag("Player");
-        if (players.Length < 2)
+        if (players.Length < 2 && !gameEnded)
         {
-            winner = players[0].name;
+            gameEnded = true;
+            GameObject pwin = players[0];
+            winner = pwin.name;
+            UpdateWins(pwin);
             EndGame();
         }
     }
@@ -51,6 +64,7 @@ public class GameManager : MonoBehaviour {
         winnerText.color = FindColor(winner);
         winnerText.text = result; 
         yield return new WaitForSeconds(3);
+        winnerText.text = ""; //Reset Before next Scene
         int index = UnityEngine.Random.Range(0, 5);
         SceneManager.LoadScene(index);
     }
@@ -76,6 +90,11 @@ public class GameManager : MonoBehaviour {
                 Destroy(players[1]);
             }
         }
+    }
+
+    void UpdateWins(GameObject o){
+        string n = o.name;
+        stat.IncWin(n);
     }
 
     Color FindColor(string s){
