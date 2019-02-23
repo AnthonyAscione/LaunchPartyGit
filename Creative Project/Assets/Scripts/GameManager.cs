@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     bool gameEnded = false;
     GameObject StatManag;
     Stats stat;
+    //bool endScene = false;
 
     void Start () {
         StatManag = GameObject.FindGameObjectWithTag("Stats");

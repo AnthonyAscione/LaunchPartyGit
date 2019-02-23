@@ -12,30 +12,47 @@ public class Stats : MonoBehaviour
     int p2wins;
     public Text p1Text;
     public Text p2Text;
+    public Text fText1;
+    public Text fText2;
+    public int WinLimit;
+    Scene currScene;
+    String sName;
 
     void Start()
     {
         p1wins = 0;
         p2wins = 0;
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        p1Text.text = Convert.ToString(p1wins);
-        p2Text.text = Convert.ToString(p2wins);
-
+        currScene = SceneManager.GetActiveScene();
+        sName = currScene.name;
+        if (sName != "Scene6")
+        {
+            p1Text.text = Convert.ToString(p1wins);
+            p2Text.text = Convert.ToString(p2wins);
+            fText1.text = "P1 Kills";
+            fText2.text = "P2 Kills";
+        }
     }
 
-    public void IncWin(string winner){
+    public bool IncWin(string winner){
         if(winner == "Player1"){
             p1wins++;
         }
         else{
             p2wins++;
         }
+
+        if(p1wins >= WinLimit || p2wins >= WinLimit){
+            SceneManager.LoadScene(5);
+        }
+
+        return true;
+
+
     }
 
 
