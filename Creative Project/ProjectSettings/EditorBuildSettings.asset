@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stages/Scene5.unity
     guid: a7774b501a587dc47908e87c776a25e3
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/Kobe.unity
+    guid: 571a8d314f8e28247a4f4eaed7d91702
   m_configObjects: {}
