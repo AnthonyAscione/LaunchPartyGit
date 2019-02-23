@@ -20,9 +20,9 @@ public class Charge_Laser : MonoBehaviour
     float gauge;
     public float chargeLevel = 0;
 
-    private AudioSource gunShot;
-
-
+    private AudioSource chargeSound;
+    private AudioSource shootSound;
+    
 
 
     string shootButton;
@@ -33,11 +33,15 @@ public class Charge_Laser : MonoBehaviour
     bool flipped;
     Rigidbody2D player;
 
+    bool sound = false;
+
 
     // Use this for initialization
     void Start()
     {
-        gunShot = GetComponent<AudioSource>();
+        chargeSound = GetComponent<AudioSource>();
+        shootSound = GetComponent<AudioSource>();
+
         player = GetComponentInParent<Rigidbody2D>();
         line = GetComponentInChildren<LineRenderer>();
         effect = GetComponentInChildren<ParticleSystem>();
@@ -86,7 +90,9 @@ public class Charge_Laser : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.S) || (Input.GetAxis(shootButton) >= 0.5f))&&!firing)
         {
             if (!effect.isPlaying)
-            { effect.Play(); }
+            { effect.Play();
+                chargeSound.Play();
+            }
            
             Ex(); //fires certain number of bullets
 
@@ -99,6 +105,7 @@ public class Charge_Laser : MonoBehaviour
             chargeLevel = 0;
             firing = false;
             effect.Stop();
+            
         }
         md.x = Input.GetAxis(aimX);
         md.y = Input.GetAxis(aimY);
@@ -158,7 +165,9 @@ public class Charge_Laser : MonoBehaviour
 
     IEnumerator FireLaser(Vector3 v1)
     {
+        chargeSound.Stop();
         effect.Stop();
+      
         RaycastHit2D hitInfo = Physics2D.Raycast(firingPosition.position, v1);
         line.startWidth = 2f;
         line.endWidth = 2f;
@@ -183,12 +192,12 @@ public class Charge_Laser : MonoBehaviour
         line.enabled = true;
         yield return new WaitForSeconds(2f);
         line.enabled = false;
+        
         line.startWidth = .1f;
         line.endWidth = .1f;
         firing = true;
         chargeLevel = 0;
-
-
+        
 
     }
 
@@ -247,7 +256,7 @@ public class Charge_Laser : MonoBehaviour
 
     void PlaySound()
     {
-        gunShot.Play();
+        chargeSound.Play();
     }
 
 

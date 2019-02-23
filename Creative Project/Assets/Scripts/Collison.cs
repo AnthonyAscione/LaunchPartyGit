@@ -19,13 +19,11 @@ public class Collison : MonoBehaviour
 
 
       
-            if (objectname == "Player1" || objectname == "Player2")
-            {
-                //destroy object and its crosshair
-                GameObject ch = GameObject.Find(objectname).GetComponent<Crosshair>().crosshair;
-                Destroy(GameObject.Find(objectname));
-                Destroy(ch);
-            }
+         
+               
+                Destroy(col.gameObject);
+                
+            
         
     }
 }
