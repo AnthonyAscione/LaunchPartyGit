@@ -12,8 +12,9 @@ public class Stats : MonoBehaviour
     int p2wins;
     public Text p1Text;
     public Text p2Text;
-    public Text fText1;
-    public Text fText2;
+    public Image p1UI;
+    public Image p2UI;
+    public Image logo;
     public int WinLimit;
     Scene currScene;
     String sName;
@@ -29,12 +30,19 @@ public class Stats : MonoBehaviour
     {
         currScene = SceneManager.GetActiveScene();
         sName = currScene.name;
-        if (sName != "Scene6")
+        if (sName == "Title")
         {
+            p1UI.enabled = false;
+            p2UI.enabled = false;
+            logo.enabled = true;
+        }
+        else
+        {
+            p1UI.enabled = true;
+            p2UI.enabled = true;
+            logo.enabled = false;
             p1Text.text = Convert.ToString(p1wins);
             p2Text.text = Convert.ToString(p2wins);
-            fText1.text = "P1 Kills";
-            fText2.text = "P2 Kills";
         }
     }
 
