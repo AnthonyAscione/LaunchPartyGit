@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour {
         winnerText.text = result; 
         yield return new WaitForSeconds(3);
         winnerText.text = ""; //Reset Before next Scene
-        int index = UnityEngine.Random.Range(0, 5);
+        int index = UnityEngine.Random.Range(1, 6);
         SceneManager.LoadScene(index);
     }
 

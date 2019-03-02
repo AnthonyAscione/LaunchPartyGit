@@ -584,6 +584,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   death: {fileID: 3112126639071481370, guid: 014ea09a26dfc16438f88a75f6036451, type: 3}
   health: 100
+  healthBar: {fileID: 3069069022835757914, guid: f1105edd280115f4a9e376721406b0a2,
+    type: 3}
 --- !u!114 &7412948177474226201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,3 +598,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b84856cf9f04ad39ad73802e225943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1Text: {fileID: 0}
+  p2Text: {fileID: 0}
+  p1UI: {fileID: 0}
+  p2UI: {fileID: 0}
+  logo: {fileID: 0}
+  WinLimit: 0

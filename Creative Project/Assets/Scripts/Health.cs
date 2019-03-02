@@ -1,26 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     public GameObject death;
     public int health = 100;
     Rigidbody2D player;
+    GameObject Cross;
+    
     // Start is called before the first frame update
     void Start()
     {
-       player = GetComponent<Rigidbody2D>();
        
+
+       player = GetComponent<Rigidbody2D>();
+        
     }
 
     public void takeDamage(int damage)
     {
         health -= damage;
-
+        
         if (health <= 0)
         {
-            
+            Crosshair ch = GetComponent<Crosshair>();
+            health = 0;
+            Cross = ch.GetCrosshair();
+            Destroy(Cross);
             Destroy(gameObject);
         }
 
@@ -30,4 +38,10 @@ public class Health : MonoBehaviour
     {
         
     }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+    
 }

@@ -12,10 +12,17 @@ public class Stats : MonoBehaviour
     int p2wins;
     public Text p1Text;
     public Text p2Text;
+    public Text p1Health;
+    public Text p2Health;
     public Image p1UI;
     public Image p2UI;
     public Image logo;
+    public GameObject p1;
+    public GameObject p2;
     public int WinLimit;
+    Health h1;
+    Health h2;
+
     Scene currScene;
     String sName;
 
@@ -23,11 +30,14 @@ public class Stats : MonoBehaviour
     {
         p1wins = 0;
         p2wins = 0;
+        h1 = p1.GetComponent<Health>();
+        h2 = p2.GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         currScene = SceneManager.GetActiveScene();
         sName = currScene.name;
         if (sName == "Title")
@@ -43,6 +53,8 @@ public class Stats : MonoBehaviour
             logo.enabled = false;
             p1Text.text = Convert.ToString(p1wins);
             p2Text.text = Convert.ToString(p2wins);
+            p1Health.text = Convert.ToString(h1.GetHealth()) + " %";
+            p2Health.text = Convert.ToString(h2.GetHealth()) + " %";
         }
     }
 
@@ -55,7 +67,7 @@ public class Stats : MonoBehaviour
         }
 
         if(p1wins >= WinLimit || p2wins >= WinLimit){
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(6);
         }
 
         return true;
