@@ -5,4 +5,4 @@ Launch Party is a multiplayer 2D shooter designed around quick rounds and good t
 
 Develoepd in Unity. Part of Northwestern's premier Game Dev club, Pioneers for Interactive Entertainment.
 
-#Developers
+# Developers
