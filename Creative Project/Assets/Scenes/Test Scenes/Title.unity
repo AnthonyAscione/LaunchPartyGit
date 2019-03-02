@@ -362,7 +362,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 153506679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 473204e7c1204467b86f4cb95aecdf44, type: 3}
+  m_Script: {fileID: 11500000, guid: f4bb8a458612449c29505d151e834f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &153506684 stripped
@@ -1182,6 +1182,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4440398943991273967, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
+        type: 3}
+      propertyPath: m_TagString
+      value: TUI
       objectReference: {fileID: 0}
     - target: {fileID: 4440398943991273963, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
         type: 3}

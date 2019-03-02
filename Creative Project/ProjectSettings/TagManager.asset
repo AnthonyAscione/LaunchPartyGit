@@ -10,6 +10,8 @@ TagManager:
   - Stats
   - P2C
   - P1C
+  - TUI
+  - END
   layers:
   - Default
   - TransparentFX

@@ -18,6 +18,8 @@ public class Stats : MonoBehaviour
     public int WinLimit;
     Scene currScene;
     String sName;
+    //GameObject emptyO;
+   //BTS bts;
 
     void Start()
     {
@@ -28,16 +30,23 @@ public class Stats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       //emptyO = GameObject.FindGameObjectWithTag("END");
+        //if(emptyO){
+            //bts = emptyO.GetComponent<BTS>();
+       // }
+       
         currScene = SceneManager.GetActiveScene();
         sName = currScene.name;
         if (sName == "Title")
         {
+            //print("title screen");
             p1UI.enabled = false;
             p2UI.enabled = false;
             logo.enabled = true;
         }
         else
         {
+            //print("not title screen");
             p1UI.enabled = true;
             p2UI.enabled = true;
             logo.enabled = false;
@@ -55,7 +64,11 @@ public class Stats : MonoBehaviour
         }
 
         if(p1wins >= WinLimit || p2wins >= WinLimit){
-            SceneManager.LoadScene(5);
+            //keep the load scene down low not really sure why
+            //if(bts){
+              //  bts.assignV(winner);
+            //}
+            StartCoroutine(Wait());
         }
 
         return true;
@@ -76,5 +89,17 @@ public class Stats : MonoBehaviour
             Destroy(objs[1]);
         }
     }
+
+    public void Reset()
+    {
+        p1wins = 0;
+        p2wins = 0;
+    }
+
+    IEnumerator Wait(){
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(5);
+    }
+
 
 }
