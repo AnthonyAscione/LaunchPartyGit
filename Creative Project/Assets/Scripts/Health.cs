@@ -25,11 +25,8 @@ public class Health : MonoBehaviour
         
         if (health <= 0)
         {
-            Crosshair ch = GetComponent<Crosshair>();
-            health = 0;
-            Cross = ch.GetCrosshair();
-            Destroy(Cross);
-            Destroy(gameObject);
+            StartCoroutine(kill());
+           
         }
 
     }
@@ -42,6 +39,18 @@ public class Health : MonoBehaviour
     public int GetHealth()
     {
         return health;
+    }
+
+    IEnumerator kill()
+    {
+        Crosshair ch = GetComponent<Crosshair>();
+        Cross = ch.GetCrosshair();
+        health = 0;
+        yield return new WaitForSeconds(.1f);
+        Destroy(Cross);
+        Destroy(gameObject);
+
+
     }
     
 }

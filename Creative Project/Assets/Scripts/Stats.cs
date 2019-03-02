@@ -12,35 +12,37 @@ public class Stats : MonoBehaviour
     int p2wins;
     public Text p1Text;
     public Text p2Text;
-    public Text p1Health;
-    public Text p2Health;
+    public Slider p1Health;
+    public Slider p2Health;
     public Image p1UI;
     public Image p2UI;
     public Image logo;
-    public GameObject p1;
-    public GameObject p2;
+  
     public int WinLimit;
     Health h1;
     Health h2;
+    GameObject[] players;
 
     Scene currScene;
     String sName;
-    //GameObject emptyO;
-   //BTS bts;
+    GameObject emptyO;
+    BTS bts;
 
     void Start()
     {
         p1wins = 0;
         p2wins = 0;
-        h1 = p1.GetComponent<Health>();
-        h2 = p2.GetComponent<Health>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        
 
-       emptyO = GameObject.FindGameObjectWithTag("END");
+       
+
+        emptyO = GameObject.FindGameObjectWithTag("END");
         if(emptyO){
             bts = emptyO.GetComponent<BTS>();
         }
@@ -50,21 +52,39 @@ public class Stats : MonoBehaviour
         sName = currScene.name;
         if (sName == "Title")
         {
-            //print("title screen");
+            print("title screen");
             p1UI.enabled = false;
             p2UI.enabled = false;
             logo.enabled = true;
+            p2Health.enabled = false;
+            p1Health.enabled = false;
+
         }
         else
         {
-            //print("not title screen");
+            print("not title screen");
             p1UI.enabled = true;
             p2UI.enabled = true;
             logo.enabled = false;
+            p2Health.enabled = true;
+            p1Health.enabled = true;
             p1Text.text = Convert.ToString(p1wins);
             p2Text.text = Convert.ToString(p2wins);
-            p1Health.text = Convert.ToString(h1.GetHealth()) + " %";
-            p2Health.text = Convert.ToString(h2.GetHealth()) + " %";
+            players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject player in players)
+            {
+                if (player.name == "Player1")
+                {
+                    h1 = player.GetComponent<Health>();
+                    p1Health.value = (h1.GetHealth()); }
+                else
+                {
+                    h2 = player.GetComponent<Health>();
+                    p2Health.value = (h2.GetHealth()); }
+
+            }
+
+
         }
     }
 
@@ -79,11 +99,10 @@ public class Stats : MonoBehaviour
         if(p1wins >= WinLimit || p2wins >= WinLimit){
 
            
-            if(bts){
-                bts.assignV(winner);
-            }
-            StartCoroutine(Wait());
-
+           // if(bts){
+               // bts.assignV(winner);
+            //}
+          
             SceneManager.LoadScene(6);
 
         }
@@ -113,10 +132,7 @@ public class Stats : MonoBehaviour
         p2wins = 0;
     }
 
-    IEnumerator Wait(){
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(5);
-    }
+   
 
 
 }

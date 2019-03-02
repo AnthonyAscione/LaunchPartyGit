@@ -43,7 +43,7 @@ public class BTS : MonoBehaviour
     IEnumerator LoadTitleScene(){
         yield return new WaitForSeconds(5);
         stat.Reset();
-        SceneManager.LoadScene(6); //Load Title Screen
+        SceneManager.LoadScene(0); //Load Title Screen
     }
 
     //public void assignV(string n){
