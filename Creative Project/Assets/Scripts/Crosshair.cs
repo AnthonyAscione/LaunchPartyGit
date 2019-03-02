@@ -74,6 +74,8 @@ public class Crosshair : MonoBehaviour
         {
             flip();
         }
+
+        
     }
 
     void flip()
@@ -81,4 +83,7 @@ public class Crosshair : MonoBehaviour
         play.transform.Rotate(180f, 0f, 0f);
 
     }
+
+    public GameObject GetCrosshair()
+    { return crosshair; }
 }

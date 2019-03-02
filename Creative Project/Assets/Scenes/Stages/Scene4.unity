@@ -1000,19 +1000,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8a39a2e60390731428738125b5a68bb5,
+      objectReference: {fileID: 21300000, guid: cfc0659c76a75d442ac9039f5353c6ed,
         type: 3}
     - target: {fileID: 1980415083354056896, guid: 8bae7e204851ad348a6363ba2e762b97,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.016451675
+      value: -0.49052715
       objectReference: {fileID: 0}
     - target: {fileID: 1980415083354056896, guid: 8bae7e204851ad348a6363ba2e762b97,
         type: 3}
       propertyPath: m_Radius
-      value: 8.909041
+      value: 8.807646
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5410179845896655808, guid: 8bae7e204851ad348a6363ba2e762b97, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8bae7e204851ad348a6363ba2e762b97, type: 3}
 --- !u!1001 &4807836915016420662
 PrefabInstance:
