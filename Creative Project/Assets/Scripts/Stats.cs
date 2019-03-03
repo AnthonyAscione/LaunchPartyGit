@@ -56,8 +56,8 @@ public class Stats : MonoBehaviour
             p1UI.enabled = false;
             p2UI.enabled = false;
             logo.enabled = true;
-            p2Health.enabled = false;
-            p1Health.enabled = false;
+            p2Health.value = (0);
+            p1Health.value = 0;
 
         }
         else
