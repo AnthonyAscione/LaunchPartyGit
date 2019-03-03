@@ -1774,7 +1774,17 @@ PrefabInstance:
     - target: {fileID: 4440398943991273965, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
         type: 3}
       propertyPath: m_UiScaleMode
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4440398943991273965, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
+        type: 3}
+      propertyPath: m_FallbackScreenDPI
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4440398943991273965, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 4440398943174199088, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
         type: 3}
@@ -2831,7 +2841,12 @@ PrefabInstance:
     - target: {fileID: 4440398943991273965, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
         type: 3}
       propertyPath: m_UiScaleMode
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4440398943991273965, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4440398943174199088, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
         type: 3}

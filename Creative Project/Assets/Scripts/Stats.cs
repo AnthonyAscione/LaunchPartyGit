@@ -98,12 +98,7 @@ public class Stats : MonoBehaviour
 
         if(p1wins >= WinLimit || p2wins >= WinLimit){
 
-           
-           // if(bts){
-               // bts.assignV(winner);
-            //}
-          
-            SceneManager.LoadScene(6);
+            StartCoroutine(Wait());
 
         }
 
@@ -130,6 +125,11 @@ public class Stats : MonoBehaviour
     {
         p1wins = 0;
         p2wins = 0;
+    }
+
+    IEnumerator Wait(){
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(6);
     }
 
    
