@@ -102,6 +102,11 @@ public class Stats : MonoBehaviour
 
         }
 
+        int oneMore = WinLimit - 1;
+        if(p1wins == oneMore && p2wins == oneMore){
+            StartCoroutine(LoadTieScene());
+        }
+
         return true;
 
 
@@ -132,6 +137,10 @@ public class Stats : MonoBehaviour
         SceneManager.LoadScene(6);
     }
 
+    IEnumerator LoadTieScene(){
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(7);
+    }
    
 
 
