@@ -46,6 +46,10 @@ public class Crosshair : MonoBehaviour
         crosshair = Instantiate(crosshair, spot, Quaternion.identity);
         crosshair.GetComponent<SpriteRenderer>().sortingOrder = 1;
 
+        LastCoord.x = 1;
+        LastCoord.y = 0;
+        LastCoord.z = 0;
+
     }
 
     // Update is called once per frame
@@ -54,26 +58,38 @@ public class Crosshair : MonoBehaviour
 
         direction.x = Input.GetAxis(aimX);
         direction.y = Input.GetAxis(aimY);
-        if (direction.x == 0 && direction.y == 0)
-        {
-            direction.x = 1;
+
+        if(direction.x == 0 && direction.y == 0){
+            direction.x = LastCoord.x;
+            direction.y = LastCoord.y;
         }
 
+        
         direction = direction.normalized * dist;
         coord.x = direction.x + origin.position.x;
         coord.y = direction.y + origin.position.y;
+        LastCoord.x = direction.x;
+        LastCoord.y = direction.y;
 
         crosshair.transform.SetPositionAndRotation(coord, Quaternion.identity);
-        theta = Vector2.SignedAngle(play.transform.right,direction);
+        theta = Vector2.SignedAngle(play.transform.right, direction);
 
+
+
+       //Anthony's flipping stuff
         if (theta <= 0 && !flipped)
-        {
+         {
+
             flip();
-        }
+         }
+            
+          
+          
         if (theta >= 0 && flipped)
-        {
-            flip();
-        }
+          {
+                flip();
+          }
+        
 
         
     }
