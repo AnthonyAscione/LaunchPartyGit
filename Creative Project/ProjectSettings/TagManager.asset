@@ -12,6 +12,7 @@ TagManager:
   - P1C
   - TUI
   - END
+  - Inter1
   layers:
   - Default
   - TransparentFX
