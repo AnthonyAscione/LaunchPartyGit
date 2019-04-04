@@ -18,7 +18,7 @@ public class Interactables : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         int len = players.Length;
