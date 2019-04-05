@@ -8,6 +8,7 @@ public class Bolt_Sniper : MonoBehaviour
 
     public Transform firingPosition;
     int Bullets;
+    Vector3 LastCoord;
     float time;
     float bspeed;
     float recoilTime;
@@ -64,6 +65,10 @@ public class Bolt_Sniper : MonoBehaviour
 
         spread = 0f;
 
+        LastCoord.x = 1;
+        LastCoord.y = 0;
+        LastCoord.z = 0;
+
 
 
 
@@ -95,8 +100,10 @@ public class Bolt_Sniper : MonoBehaviour
         //when added to movement change this so default is vector of rotation of player
         if (md.x == 0 && md.y == 0) //ignore warnings this works for Not a Number
         {
-            md.x = 1;
+            md = LastCoord;
         }
+
+        LastCoord = md;
         float angle = Mathf.Atan2(md.y, md.x) * Mathf.Rad2Deg;
         transform.rotation = transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         float theta = Vector2.SignedAngle(player.transform.right, md);
@@ -157,10 +164,10 @@ public class Bolt_Sniper : MonoBehaviour
         //when added to movement change this so default is vector of rotation of player
         if (md.x == 0 && md.y == 0) //ignore warnings this works for Not a Number
         {
-            md.x = 1;
+            md = LastCoord;
         }
 
-
+        LastCoord = md;
 
 
 
