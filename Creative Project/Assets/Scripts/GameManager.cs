@@ -66,8 +66,13 @@ public class GameManager : MonoBehaviour {
         winnerText.text = result; 
         yield return new WaitForSeconds(3);
         winnerText.text = ""; //Reset Before next Scene
-        int index = UnityEngine.Random.Range(1, 6);
-        SceneManager.LoadScene(index);
+
+        //random possibly repeatable scene
+        //int index = UnityEngine.Random.Range(1, 6);
+        //SceneManager.LoadScene(index);
+
+        //no scene can be played twice
+        stat.LoadNextScene();
     }
 
     //checks to see if a player fell off the map
