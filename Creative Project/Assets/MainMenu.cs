@@ -5,8 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-  public void PlayGame ()
+    GameObject StatManag;
+    Stats stat;
+
+    public void PlayGame ()
     {
-        SceneManager.LoadScene("Scene4");
+        stat.LoadNextScene();
+    }
+
+
+
+    void Start()
+    {
+        StatManag = GameObject.FindGameObjectWithTag("Stats");
+        stat = StatManag.GetComponent<Stats>();
     }
 }
