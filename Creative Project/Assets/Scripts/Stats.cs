@@ -10,6 +10,7 @@ public class Stats : MonoBehaviour
     // Start is called before the first frame update
     int p1wins;
     int p2wins;
+    public int nscenes; //should be 5 maybe 6
     public Text p1Text;
     public Text p2Text;
     public Slider p1Health;
@@ -17,6 +18,7 @@ public class Stats : MonoBehaviour
     public Image p1UI;
     public Image p2UI;
     public Image logo;
+    List<int> scenes;
   
     public int WinLimit;
     Health h1;
@@ -32,7 +34,9 @@ public class Stats : MonoBehaviour
     {
         p1wins = 0;
         p2wins = 0;
-       
+
+        FillScenes();
+
     }
 
     // Update is called once per frame
@@ -58,6 +62,8 @@ public class Stats : MonoBehaviour
             logo.enabled = true;
             p2Health.value = (0);
             p1Health.value = 0;
+            p1Text.enabled = false;
+            p2Text.enabled = false;
 
         }
         else
@@ -68,6 +74,8 @@ public class Stats : MonoBehaviour
             logo.enabled = false;
             p2Health.enabled = true;
             p1Health.enabled = true;
+            p1Text.enabled = true;
+            p2Text.enabled = true;
             p1Text.text = Convert.ToString(p1wins);
             p2Text.text = Convert.ToString(p2wins);
             players = GameObject.FindGameObjectsWithTag("Player");
@@ -130,6 +138,7 @@ public class Stats : MonoBehaviour
     {
         p1wins = 0;
         p2wins = 0;
+        FillScenes();
     }
 
     IEnumerator Wait(){
@@ -141,7 +150,27 @@ public class Stats : MonoBehaviour
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(7);
     }
-   
+
+    public void LoadNextScene(){
+
+        int num = UnityEngine.Random.Range(0, scenes.Count - 1);
+        int nsc = scenes[num];
+        scenes.RemoveAt(num);
+        SceneManager.LoadScene(nsc);
+
+        if (scenes.Count == 0)
+        {
+            FillScenes();
+        }
+    } 
+
+    public void FillScenes(){
+        scenes = new List<int>();
+        for (int i = 1; i <= nscenes; i++)
+        {
+            scenes.Add(i);
+        }
+    }
 
 
 }
