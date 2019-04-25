@@ -12,6 +12,7 @@ public class Burst_Ar : MonoBehaviour
     float bspeed;
     float recoilTime;
     float lastFired;
+    Vector3 LastCoord;
 
 
 
@@ -67,7 +68,9 @@ public class Burst_Ar : MonoBehaviour
         gauge = 1;
 
 
-
+        LastCoord.x = 1;
+        LastCoord.y = 0;
+        LastCoord.z = 0;
 
 
     }
@@ -96,8 +99,10 @@ public class Burst_Ar : MonoBehaviour
         //when added to movement change this so default is vector of rotation of player
         if (md.x == 0 && md.y == 0) //ignore warnings this works for Not a Number
         {
-            md.x = 1;
+            md = LastCoord;
         }
+
+        LastCoord = md;
         float angle = Mathf.Atan2(md.y, md.x) * Mathf.Rad2Deg;
         transform.rotation = transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         float theta = Vector2.SignedAngle(player.transform.right, md);
@@ -142,10 +147,10 @@ public class Burst_Ar : MonoBehaviour
         //when added to movement change this so default is vector of rotation of player
         if (md.x == 0 && md.y == 0) //ignore warnings this works for Not a Number
         {
-            md.x = 1;
+            md = LastCoord;
         }
 
-
+        LastCoord = md;
 
 
         for (int i = 0; i < Bullets; i++)
