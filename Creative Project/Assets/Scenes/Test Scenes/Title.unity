@@ -112,6 +112,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &11966792 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8125403993571229020, guid: 4317f5b4a0ac90a40a151bd35d57c5a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 906570086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &17380839
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,9 +770,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Start
-
-'
+  m_Text: Audio
 --- !u!222 &806489178
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1777,7 +1787,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1343046462}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1464455269}
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1343046462
@@ -2004,6 +2025,8 @@ GameObject:
   - component: {fileID: 1464455267}
   - component: {fileID: 1464455266}
   - component: {fileID: 1464455268}
+  - component: {fileID: 1464455269}
+  - component: {fileID: 1464455270}
   m_Layer: 5
   m_Name: MainMenuPanel
   m_TagString: Untagged
@@ -2094,6 +2117,32 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!114 &1464455269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464455264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5f1533ac3715544a3917d829169ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1464455270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464455264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f470a4df12fd6ec47ab4450f1368e272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 11966792}
+  selectedObject: {fileID: 1343046459}
 --- !u!1 &1470668248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,7 +2413,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Start
+  m_Text: 'Quit
 
 '
 --- !u!222 &1596011113
@@ -2722,9 +2771,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Start
-
-'
+  m_Text: Help
 --- !u!222 &1871069371
 CanvasRenderer:
   m_ObjectHideFlags: 0
