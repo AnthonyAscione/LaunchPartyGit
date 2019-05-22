@@ -8,6 +8,11 @@ public class MainMenu : MonoBehaviour
     GameObject StatManag;
     Stats stat;
 
+    public void LoadByIndex(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
+
     public void PlayGame ()
     {
         stat.LoadNextScene();
