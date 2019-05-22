@@ -13,7 +13,6 @@ TagManager:
   - TUI
   - END
   - Inter1
-  - SM
   layers:
   - Default
   - TransparentFX
