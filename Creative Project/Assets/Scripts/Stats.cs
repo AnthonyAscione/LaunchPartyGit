@@ -17,7 +17,7 @@ public class Stats : MonoBehaviour
     public Slider p2Health;
     public Image p1UI;
     public Image p2UI;
-    public Image logo;
+    //public Image logo;
     List<int> scenes;
   
     public int WinLimit;
@@ -59,7 +59,7 @@ public class Stats : MonoBehaviour
             print("title screen");
             p1UI.enabled = false;
             p2UI.enabled = false;
-            logo.enabled = true;
+           //logo.enabled = true;
             p2Health.value = (0);
             p1Health.value = 0;
             p1Text.enabled = false;
@@ -71,7 +71,7 @@ public class Stats : MonoBehaviour
             print("not title screen");
             p1UI.enabled = true;
             p2UI.enabled = true;
-            logo.enabled = false;
+            //logo.enabled = false;
             p2Health.enabled = true;
             p1Health.enabled = true;
             p1Text.enabled = true;

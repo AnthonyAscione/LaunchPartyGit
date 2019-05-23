@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour {
     public float speed;
     public float maxVelocity;
     public float distance;
+    public float modifier;
     float massScale;
 
 
@@ -50,17 +51,19 @@ public class Movement : MonoBehaviour {
         {
 
             direction = planet.transform.position + -1 * player.transform.position; // Direction to apply the force
-            float dist = Vector3.Distance(planet.transform.position, player.transform.position); // Distance between player and planet
+            float distToCenter = Vector3.Distance(planet.transform.position, player.transform.position); // Distance between player and planet
+            float radius = planet.GetComponent<CircleCollider2D>().radius * planet.transform.localScale.x;
+            float dist = (distToCenter - radius) + modifier;
             direction = direction.normalized;
-
-            massScale = planet.transform.localScale.x/.3f;// the default planet has scale .3
+            
 
             // Each frame we want to find the closest planet. 
             if (dist < minDistance)
             {
                 minDistance = dist;
                 minDirection = direction;
-                force = (G * (10)/(minDistance * minDistance))* massScale; // The force that should be applied
+                Debug.Log(minDistance);
+                force = (G /(minDistance * minDistance)); // The force that should be applied
 
             }
 

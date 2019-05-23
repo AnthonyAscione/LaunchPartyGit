@@ -18,13 +18,12 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.gameObject.tag != "Shots")
-        {
+        
             Health health = hitInfo.GetComponent<Health>();
             if (health != null)
             { health.takeDamage(20); }
 
             Destroy(gameObject);
-        }
+        
     }
 }
