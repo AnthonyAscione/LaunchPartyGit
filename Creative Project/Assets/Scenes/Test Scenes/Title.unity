@@ -208,7 +208,6 @@ MonoBehaviour:
   p2Health: {fileID: 1864482998}
   p1UI: {fileID: 929462848}
   p2UI: {fileID: 525702137}
-  logo: {fileID: 0}
   WinLimit: 5
 --- !u!4 &233852270
 Transform:
@@ -1146,6 +1145,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4440398943991273964, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4440398943991273965, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
         type: 3}
       propertyPath: m_UiScaleMode
@@ -1160,11 +1164,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ReferenceResolution.x
       value: 1500
-      objectReference: {fileID: 0}
-    - target: {fileID: 4440398943991273964, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4440398943174199088, guid: 9b2353a43abb2cf46a17a471e8e9ae5b,
         type: 3}

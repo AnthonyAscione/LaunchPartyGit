@@ -17,13 +17,13 @@ public class HeavyBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.gameObject.tag != "Shots")
+        if (hitInfo.gameObject.tag == "Player")
         {
             Health health = hitInfo.GetComponent<Health>();
             if (health != null)
             { health.takeDamage(100); }
 
-            Destroy(gameObject);
+            
         }
     }
 }

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4838606643075651112}
   - component: {fileID: 327289068}
   m_Layer: 0
-  m_Name: Hell_Fire
-  m_TagString: Untagged
+  m_Name: Dragon's Breath
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: -1652667849
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300014, guid: 7974acdb21a53024683f5951ac3bb687, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ccac37a0a155ef545ae8835d9559922a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

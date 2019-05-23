@@ -4,27 +4,38 @@ using System.Collections;
 public class Weapons : MonoBehaviour
 {
 
-    public GameObject[] weapons; // push your prefabs
+    public GameObject[] startWeapons; // push your prefabs
 
-    public int currentWeapon = 0;
+    
 
-    private int nrWeapons;
+    int currentWeapon = 0;
 
+   
+
+   
     void Start()
     {
 
-        nrWeapons = weapons.Length;
-        currentWeapon = UnityEngine.Random.Range(0, nrWeapons);
-        SwitchWeapon(currentWeapon); // Set default gun
+        currentWeapon = UnityEngine.Random.Range(0, 4);
+        SwitchWeapon(startWeapons[currentWeapon]); // Set default gun
 
     }
 
 
 
 
-    void SwitchWeapon(int index)
+    public void SwitchWeapon(GameObject newGun)
     {
-        var gun = Instantiate(weapons[index], new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        foreach (Transform child in transform)
+        {
+            GameObject obj = child.gameObject;
+            if (obj.tag == "Weapon")
+            { Destroy(child.gameObject); }
+        }
+
+       
+
+        var gun = Instantiate(newGun, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         gun.transform.parent = gameObject.transform;
        
     }

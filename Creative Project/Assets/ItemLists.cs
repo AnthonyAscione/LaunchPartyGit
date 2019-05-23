@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class ItemLists : MonoBehaviour
 {
+    public GameObject[] weapons; // push your prefabs
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,14 +18,8 @@ public class Bullet : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    public GameObject getWeapon(int index)
     {
-        
-            Health health = hitInfo.GetComponent<Health>();
-            if (health != null)
-            { health.takeDamage(20); }
-
-            Destroy(gameObject);
-        
+        return weapons[index];
     }
 }

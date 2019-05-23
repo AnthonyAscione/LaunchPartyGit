@@ -478,17 +478,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3dac3ce9b80e241a934b094ddf882a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
+  startWeapons:
   - {fileID: 204705982355850135, guid: 0c9d16e87579b3d4eb05a2dc2dcee6b5, type: 3}
   - {fileID: 1231814363, guid: 61539bf421ae20743b6c836b68db8207, type: 3}
   - {fileID: 4908667668834326072, guid: 357d3f318f1c5be45835b00f17f7ed2b, type: 3}
   - {fileID: 6846906346235825214, guid: b4c9531c3bb3a6947b9544c34de186dd, type: 3}
-  - {fileID: 1865954799, guid: af003b088235ab94f99839f023029d8b, type: 3}
-  - {fileID: 184590286, guid: d647d22bb0862ed46861458647331d50, type: 3}
-  - {fileID: 1440508558, guid: 7482a1f62318e9f409ceb7ba6a71fba4, type: 3}
-  - {fileID: 1490547948, guid: 8f07e97da0553ca458ee163ccf7c6e0b, type: 3}
-  - {fileID: 2070087751, guid: e7f6a5adcc10db949b7d39ec594be6a1, type: 3}
-  - {fileID: 327289065, guid: 9cc194a832cf85d49a4d6d75e72eaa47, type: 3}
   currentWeapon: 0
 --- !u!114 &5240512631911843049
 MonoBehaviour:
