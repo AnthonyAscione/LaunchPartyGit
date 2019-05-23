@@ -13,7 +13,11 @@ TagManager:
   - TUI
   - END
   - Inter1
+
+  - SM
+
   - Weapon
+
   layers:
   - Default
   - TransparentFX
