@@ -29,6 +29,7 @@ public class Health : MonoBehaviour
            
         }
 
+
     }
     // Update is called once per frame
     void Update()
@@ -40,6 +41,17 @@ public class Health : MonoBehaviour
     {
         return health;
     }
+
+    public void GainHealth(int heal){
+        if(heal + health > 100){
+            health = 100;
+        }
+        else{
+            health += heal;
+        }
+
+    }
+
 
     IEnumerator kill()
     {

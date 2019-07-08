@@ -34,6 +34,10 @@ public class StarCollider : MonoBehaviour
         if(t == "Damage"){
             Damage(col.gameObject.name); // what it collided with; hopefully player 1 or player 2
         }
+
+        else if(t == "Invince"){
+            Gain(col.gameObject.name);
+        }
         
         Destroy(this.gameObject);
         
@@ -41,12 +45,22 @@ public class StarCollider : MonoBehaviour
     }
 
     void Damage(string n){
-        if(n == "Player1" || n == "Player2"){
+        if (n == "Player1" || n == "Player2")
+        {
             GameObject player = GameObject.Find(n);
             Health h = player.GetComponent<Health>();
             h.takeDamage(50);
         }
-
-
     }
+
+    void Gain(string n){
+        if (n == "Player1" || n == "Player2")
+        {
+            GameObject player = GameObject.Find(n);
+            Health h = player.GetComponent<Health>();
+            h.GainHealth(50);
+        }
+    }
+    
+
 }

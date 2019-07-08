@@ -80,7 +80,7 @@ public class ShootingStar : MonoBehaviour
 
     Color FindColor()
     {
-        int num = UnityEngine.Random.Range(0, 5); // the 5 is not actually inclusive
+        int num = UnityEngine.Random.Range(0, 2); // the 5 is not actually inclusive
         type = pairs[num].type1;
         return pairs[num].c1;
     }
