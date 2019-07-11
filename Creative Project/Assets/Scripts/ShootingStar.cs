@@ -70,7 +70,7 @@ public class ShootingStar : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(this);
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Stats");
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("SM");
         int len = objs.Length;
         if (len > 1)
         {

@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    string player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = "NA";
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
@@ -26,5 +27,13 @@ public class Bullet : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    public string getOrigin(){
+        return player;
+    }
+
+    public void setOrigin(string orig){
+        player = orig;
     }
 }

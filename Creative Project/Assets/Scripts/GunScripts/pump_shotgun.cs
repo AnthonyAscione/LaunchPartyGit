@@ -131,6 +131,7 @@ public class pump_shotgun : MonoBehaviour
     {
         shoot = new Vector3(firingPosition.position.x + md.x, firingPosition.position.y + md.y, 0);
         var bullet = Instantiate(bulletPrefab, point.position, Quaternion.identity); //might only last length of function
+        bullet.GetComponent<Bullet>().setOrigin(player.name); //this line allows us to track who shot what
         bullet.GetComponent<Rigidbody2D>().velocity = v1 * bspeed;
         PlaySound(); //might have to fix later
         Destroy(bullet, 2.0f);
