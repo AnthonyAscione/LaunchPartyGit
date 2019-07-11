@@ -28,15 +28,17 @@ public class StarCollider : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         //Destroy(col.gameObject);
         if(t == "Damage"){
             Damage(col.gameObject.name); // what it collided with; hopefully player 1 or player 2
+            print("Red star collided");
         }
 
         else if(t == "Invince"){
             Gain(col.gameObject.name);
+            print("Green star collided");
         }
         
         Destroy(this.gameObject);

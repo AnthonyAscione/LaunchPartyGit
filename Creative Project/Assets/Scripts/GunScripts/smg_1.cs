@@ -58,7 +58,6 @@ public class smg_1 : MonoBehaviour
 
 
 
-
         Bullets = 1;
         time = 0.05f;
         bspeed = 20;
@@ -128,6 +127,19 @@ public class smg_1 : MonoBehaviour
     {
         shoot = new Vector3(firingPosition.position.x + md.x, firingPosition.position.y + md.y, 0);
         var bullet = Instantiate(bulletPrefab, point.position, Quaternion.identity); //might only last length of function
+        Bullet b1 = bullet.GetComponent<Bullet>(); //this line allows us to track who shot what
+
+        
+        if(b1 == null){
+            print("null");
+        }
+        else{
+            b1.setOrigin(player.name);
+        }
+
+        //print(b1.getOrigin()); //to check to see who shot the bullet
+
+
         bullet.GetComponent<Rigidbody2D>().velocity = v1 * bspeed;
         PlaySound(); //might have to fix later
         Destroy(bullet, 2.0f);

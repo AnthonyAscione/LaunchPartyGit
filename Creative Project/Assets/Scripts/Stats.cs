@@ -56,7 +56,7 @@ public class Stats : MonoBehaviour
         sName = currScene.name;
         if (sName == "Title")
         {
-            print("title screen");
+            //print("title screen");
             p1UI.enabled = false;
             p2UI.enabled = false;
             logo.enabled = true;
@@ -68,7 +68,7 @@ public class Stats : MonoBehaviour
         }
         else
         {
-            print("not title screen");
+           //print("not title screen");
             p1UI.enabled = true;
             p2UI.enabled = true;
             logo.enabled = false;
