@@ -13,6 +13,7 @@ public class smg_1 : MonoBehaviour
     float recoilTime;
     float lastFired;
     Vector3 LastCoord;
+    GameObject copPF;
 
 
 
@@ -71,6 +72,8 @@ public class smg_1 : MonoBehaviour
         LastCoord.y = 0;
         LastCoord.z = 0;
 
+        copPF = bulletPrefab;
+        copPF.GetComponent<Bullet>().setOrigin(player.name);
 
     }
 
@@ -126,16 +129,17 @@ public class smg_1 : MonoBehaviour
     void FireGun(Vector3 v1)
     {
         shoot = new Vector3(firingPosition.position.x + md.x, firingPosition.position.y + md.y, 0);
-        var bullet = Instantiate(bulletPrefab, point.position, Quaternion.identity); //might only last length of function
-        Bullet b1 = bullet.GetComponent<Bullet>(); //this line allows us to track who shot what
+        copPF.GetComponent<Bullet>().setOrigin(player.name);
+        var bullet = Instantiate(copPF, point.position, Quaternion.identity); //might only last length of function
+        //Bullet b1 = bullet.GetComponent<Bullet>(); //this line allows us to track who shot what
 
         
-        if(b1 == null){
-            print("null");
-        }
-        else{
-            b1.setOrigin(player.name);
-        }
+        //if(b1 == null){
+        //    print("null");
+        //}
+        //else{
+        //    b1.setOrigin(player.name);
+        //}
 
         //print(b1.getOrigin()); //to check to see who shot the bullet
 

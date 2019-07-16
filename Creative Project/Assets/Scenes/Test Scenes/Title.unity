@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b84856cf9f04ad39ad73802e225943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nscenes: 5
+  nscenes: 6
   p1Text: {fileID: 1470668250}
   p2Text: {fileID: 1394342156}
   p1Health: {fileID: 601682073}
@@ -1290,6 +1290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466e06de0569c491da98b974df4f76f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diffStars: 0
   speed: 4
   lifeSpan: 6
   delayTime: 6

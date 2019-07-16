@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    string player;
+    public string player;
     // Start is called before the first frame update
     void Start()
     {
-        player = "NA";
+        //player = "NA";
     }
 
     // Update is called once per frame
