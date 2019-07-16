@@ -12,8 +12,8 @@ public class Auto_SG : MonoBehaviour
     float bspeed;
     float recoilTime;
     float lastFired;
-
-
+    GameObject copPF;
+    
 
 
     float spread;
@@ -72,7 +72,8 @@ public class Auto_SG : MonoBehaviour
         LastCoord.z = 0;
 
 
-
+        copPF = bulletPrefab;
+        copPF.GetComponent<Bullet>().setOrigin(player.name);
 
 
     }
@@ -129,8 +130,9 @@ public class Auto_SG : MonoBehaviour
     void FireGun(Vector3 v1)
     {
         shoot = new Vector3(firingPosition.position.x + md.x, firingPosition.position.y + md.y, 0);
-        var bullet = Instantiate(bulletPrefab, point.position, Quaternion.identity); //might only last length of function
-        bullet.GetComponent<Bullet>().setOrigin(player.name); //this line allows us to track who shot what
+        copPF.GetComponent<Bullet>().setOrigin(player.name);
+        var bullet = Instantiate(copPF, point.position, Quaternion.identity); //might only last length of function
+        //bullet.GetComponent<Bullet>().setOrigin(player.name); //this line allows us to track who shot what
         bullet.GetComponent<Rigidbody2D>().velocity = v1 * bspeed;
         PlaySound(); //might have to fix later
         Destroy(bullet, 2.0f);

@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class ShootingStar : MonoBehaviour
 {
 
+    public int diffStars;
     public int speed;
     public float lifeSpan;
     public int delayTime;
@@ -16,7 +17,7 @@ public class ShootingStar : MonoBehaviour
     string sName;
     float distance = 18f;
     float lastFired;
-    Pair[] pairs = new Pair[5];
+    Pair[] pairs = new Pair[6];
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,8 @@ public class ShootingStar : MonoBehaviour
         pairs[2] = new Pair(Color.yellow, "Guns");
         pairs[3] = new Pair(Color.magenta, "Assist");
         pairs[4] = new Pair(Color.blue, "Secondary");
+        pairs[5] = new Pair(Color.white, "Party");
+        diffStars = pairs.Length;
     }
 
     // Update is called once per frame
@@ -76,17 +79,51 @@ public class ShootingStar : MonoBehaviour
         {
             Destroy(objs[1]);
         }
+
+
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        delayTime = 6;
+        diffStars = pairs.Length;
+        speed = 4;
     }
 
     Color FindColor()
     {
-        int num = UnityEngine.Random.Range(0, 5); // the 5 is not actually inclusive
+        int num = UnityEngine.Random.Range(0, diffStars); // the diffstars is not actually inclusive
         type = pairs[num].type1;
         return pairs[num].c1;
     }
 
     public string starType(){
         return type;
+    }
+
+    public void Signal(){
+        StartCoroutine(EndStorm());
+    }
+
+
+
+    IEnumerator EndStorm(){
+        yield return new WaitForSeconds(5);
+        delayTime = 6;
+        diffStars = pairs.Length;
+        speed = 4;
+        //Debug.Log("Storm final");
+    }
+
+    public void Equip(GameObject c, GameObject h){
+        StartCoroutine(DelayEquip(c, h));
+    }
+
+    IEnumerator DelayEquip(GameObject c, GameObject h){
+        //Debug.Log("equiping " + c.name);
+        yield return new WaitForSeconds(4);
+        c.SetActive(true);
+        h.SetActive(true);
     }
 
 }
