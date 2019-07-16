@@ -153,7 +153,7 @@ public class Stats : MonoBehaviour
 
     public void LoadNextScene(){
 
-        int num = UnityEngine.Random.Range(0, scenes.Count - 1);
+        int num = UnityEngine.Random.Range(0, scenes.Count);
         int nsc = scenes[num];
         scenes.RemoveAt(num);
         SceneManager.LoadScene(nsc);
