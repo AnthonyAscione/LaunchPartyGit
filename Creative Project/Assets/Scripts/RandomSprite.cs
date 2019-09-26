@@ -9,7 +9,7 @@ public class RandomSprite : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int index = UnityEngine.Random.Range(0, planets.Length - 1);
+        int index = UnityEngine.Random.Range(0, planets.Length);
         GetComponent<SpriteRenderer>().sprite = planets[index];
     }
 

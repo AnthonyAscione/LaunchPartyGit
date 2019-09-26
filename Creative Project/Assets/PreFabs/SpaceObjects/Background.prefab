@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8432688929548900067}
   - component: {fileID: 8432688929548900066}
+  - component: {fileID: 502368478711118319}
+  - component: {fileID: 4656889652464671690}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -68,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: -1416421533
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4162e4603c1d8e24599a497acb6b25c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ce6a07b0bee19ad4bb9cad574b7c6e76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -79,3 +81,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &502368478711118319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432688929548900065}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5229ef5690bf6d439ac86439a19145d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planets:
+  - {fileID: 21300000, guid: 06c8f068178605849b424db23ff8b2a3, type: 3}
+  - {fileID: 21300000, guid: 6f3b8a27b5ce0d04b89322f7fc24941b, type: 3}
+  - {fileID: 21300000, guid: 9734d81418e80c14bbfd9805df19fc8a, type: 3}
+  - {fileID: 21300000, guid: 558b03eaa8418e4489177177bf7b7f92, type: 3}
+  - {fileID: 21300000, guid: ce6a07b0bee19ad4bb9cad574b7c6e76, type: 3}
+  - {fileID: 21300000, guid: 4162e4603c1d8e24599a497acb6b25c3, type: 3}
+--- !u!114 &4656889652464671690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432688929548900065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dde78f7af0a84446a191fc1e0652908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
