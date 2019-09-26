@@ -71,12 +71,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aedb3f56f467ca648b3eee1233bec41d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d87236260dee59479c33c67535d0576, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 21.43, y: 21.43}
+  m_Size: {x: 22.6, y: 22.590002}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -95,9 +95,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.00819842}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 8.901119
+  m_Radius: 10.66
 --- !u!50 &8947472187411527566
 Rigidbody2D:
   serializedVersion: 4
@@ -132,14 +132,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planets:
-  - {fileID: 21300000, guid: 3c8f694f2e297f2409c396131a734661, type: 3}
-  - {fileID: 21300000, guid: 50534be9181a9d043805f7325ccad6fb, type: 3}
-  - {fileID: 21300000, guid: af539de290f44f94e8c9c51d9d42fa82, type: 3}
-  - {fileID: 21300000, guid: d9d3549b10c81dc49871bb55f5796bdf, type: 3}
-  - {fileID: 21300000, guid: 8a39a2e60390731428738125b5a68bb5, type: 3}
-  - {fileID: 21300000, guid: b0b4314c39e7763429dfe4e99c484058, type: 3}
-  - {fileID: 21300000, guid: 5e2fdb3630247bd44badfe93f20dac76, type: 3}
-  - {fileID: 21300000, guid: 5a8a412b4287a0648833aa9fc123854b, type: 3}
-  - {fileID: 21300000, guid: 8bb6d7da99b6dbd499e1baf4be085d00, type: 3}
-  - {fileID: 21300000, guid: aedb3f56f467ca648b3eee1233bec41d, type: 3}
-  - {fileID: 21300000, guid: cfc0659c76a75d442ac9039f5353c6ed, type: 3}
+  - {fileID: 21300000, guid: 33d33b4d603090c49a7fd98de0f0de82, type: 3}
+  - {fileID: 21300000, guid: 4c1fedd85e54b0144bc7b755e1a8c18a, type: 3}
+  - {fileID: 21300000, guid: d40efd20dd2ec8b428e02fd4903dadd1, type: 3}
+  - {fileID: 21300000, guid: 3d87236260dee59479c33c67535d0576, type: 3}
+  - {fileID: 21300000, guid: 5b8189837fc425a4fa01c23850aa45ed, type: 3}
+  - {fileID: 21300000, guid: 030ed5f4681b4f54e821cdc66a26e9d9, type: 3}
+  - {fileID: 21300000, guid: 8f75f58580efe7446a9843970d188619, type: 3}
+  - {fileID: 21300000, guid: c578e72f90357e04087f560b92aa6b48, type: 3}
+  - {fileID: 21300000, guid: c123575b12ad6e6439bbf13e58981721, type: 3}
+  - {fileID: 21300000, guid: 50195d0979bfae8499a9bafacb6e230a, type: 3}
+  - {fileID: 21300000, guid: 1cbbc30e3ce274244be377cd553649fe, type: 3}
+  - {fileID: 21300000, guid: ff0100e60a2019a44b48f42fe22e2f50, type: 3}
