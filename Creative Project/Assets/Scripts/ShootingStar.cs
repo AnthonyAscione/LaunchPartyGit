@@ -54,7 +54,7 @@ public class ShootingStar : MonoBehaviour
         float randy = distance * Mathf.Cos(theta);
         Vector3 pos = new Vector3(randx, randy, 0);
         var star = Instantiate(shootStar, pos, Quaternion.identity);
-        star.GetComponent<SpriteRenderer>().color = FindColor();
+        //star.GetComponent<SpriteRenderer>().color = FindColor();
 
         //Send it to a random location on screen
         float randDestx = UnityEngine.Random.Range(-20f, 20f);
