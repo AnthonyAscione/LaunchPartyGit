@@ -20,4 +20,11 @@ public class MainMenu : MonoBehaviour
         StatManag = GameObject.FindGameObjectWithTag("Stats");
         stat = StatManag.GetComponent<Stats>();
     }
+
+    void FixedUpdate()
+    {
+        if(Input.GetButton("Start")){
+            PlayGame();
+        }
+    }
 }

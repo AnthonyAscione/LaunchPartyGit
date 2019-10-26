@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour {
 
     GameObject[] players;
     string winner;
-    public float bound;
+    int boundx;
+    int boundy;
     public Text winnerText;
     bool gameEnded = false;
     GameObject StatManag;
@@ -19,6 +20,9 @@ public class GameManager : MonoBehaviour {
     void Start () {
         StatManag = GameObject.FindGameObjectWithTag("Stats");
         stat = StatManag.GetComponent<Stats>();
+        boundx = 20;
+        boundy = 20;
+        print("bound x = " + Convert.ToString(boundx) + " bound y = " + Convert.ToString(boundy));
     }
 	
 	// Update is called once per frame
@@ -61,7 +65,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator Restart(){
         string result = winner + " WINS!";
-        print(result);
+        //print(result);
         winnerText.color = FindColor(winner);
         winnerText.text = result; 
         yield return new WaitForSeconds(3);
@@ -86,15 +90,17 @@ public class GameManager : MonoBehaviour {
         {
             Transform t1 = players[0].transform;
             Transform t2 = players[1].transform;
-            if (Math.Abs(t1.position.x) > bound || Math.Abs(t1.position.y) > bound)
+            if (Math.Abs(t1.position.x) > boundx || Math.Abs(t1.position.y) > boundy)
             {
                 Destroy(players[0]);
             }
 
-            if (Math.Abs(t2.position.x) > bound || Math.Abs(t2.position.y) > bound)
+            if (Math.Abs(t2.position.x) > boundx || Math.Abs(t2.position.y) > boundy)
             {
                 Destroy(players[1]);
             }
+
+
         }
     }
 

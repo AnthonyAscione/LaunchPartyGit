@@ -17,11 +17,11 @@ public class Collison : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
 
-
-      
-         
-               
-                Destroy(col.gameObject);
+        if(col.gameObject.GetComponent<Crosshair>() != null){
+            Destroy(col.gameObject.GetComponent<Crosshair>().crosshair);
+        }
+                
+            Destroy(col.gameObject);
                 
             
         
